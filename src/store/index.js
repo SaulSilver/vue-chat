@@ -11,10 +11,23 @@ const dev = process.env.NODE_ENV !== "production";
 const vuexLocal = new VuexPersistence({ storage: window.localStorage });
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    loading: false,
+    sending: false,
+    error: null,
+    user: [],
+    reconnect: false,
+    activeRoom: null,
+    rooms: [],
+    users: [],
+    messages: [],
+    userTyping: null
+  },
   mutations,
   actions,
-  getters: {},
+  getters: {
+    hasError: state => !!state.error
+  },
   plugins: [vuexLocal.plugin],
   strict: dev
 });

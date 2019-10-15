@@ -2,8 +2,8 @@
   <div class="login-form">
     <h5 class="text-center">Chat Login</h5>
     <hr>
-    <b-form @submit-prevent="onSubmit">
-      <b-alert variant="danger" :show="hasError">{{error}}</b-alert>
+    <b-form @submit.prevent="onSubmit">
+      <b-alert variant="danger" :show="hasError">{{ error }}</b-alert>
 
       <b-form-group id="userInputGroup" label="User Name" label-for="userInput">
         <b-form-input
@@ -11,6 +11,7 @@
           type="text"
           placeholder="Enter user name"
           v-model="userId"
+          autocomplete="off"
           :disabled="loading"
           required
         ></b-form-input>
@@ -20,7 +21,7 @@
         type="submit"
         variant="primary"
         class="ld-ext-right"
-        :class="{running: loading}"
+        v-bind:class="{ running: loading }"
         :disabled="isValid"
       >
         Login
@@ -37,7 +38,7 @@ export default {
   name: "login-form",
   data: () => ({ userId: "" }),
   computed: {
-    isValid: () => {
+    isValid() {
       const result = this.userId.length < 3;
       return result ? result : this.loading;
     },

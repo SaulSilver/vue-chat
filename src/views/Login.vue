@@ -1,18 +1,33 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="login">
+    <b-jumbotron
+      header="Vue.js Chat"
+      lead="Powered by Chatkit SDK and Bootstrap-Vue"
+      bg-variant="info"
+      text-variant="white"
+    >
+      <b-btn target="_blank" href="https://pusher.com/chatkit">More info</b-btn>
+    </b-jumbotron>
+
+    <b-container>
+      <b-row>
+        <b-col lg="4" md="3"></b-col>
+        <b-col lg="4" md="6">
+          <LoginForm></LoginForm>
+        </b-col>
+        <b-col lg="4" md="3"></b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import LoginForm from "@/components/LoginForm.vue";
 
 export default {
-  name: "home",
+  name: "login",
   components: {
-    HelloWorld
+    LoginForm
   }
 };
 </script>

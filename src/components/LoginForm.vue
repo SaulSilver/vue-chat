@@ -35,7 +35,7 @@
 import { mapState, mapGetters } from "vuex";
 
 export default {
-  name: "login-form",
+  name: "LoginForm",
   data: () => ({ userId: "" }),
   computed: {
     isValid() {

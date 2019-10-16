@@ -6,7 +6,7 @@
       <b-list-group-item
         v-for="room in rooms"
         :key="room.name"
-        :active="active.id === room.id"
+        :active="activeRoom.id === room.id"
         href="#"
         @click="onChange(room)"
       ># {{room.name}}</b-list-group-item>

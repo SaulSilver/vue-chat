@@ -21,7 +21,7 @@
         type="submit"
         variant="primary"
         class="ld-ext-right"
-        v-bind:class="{ running: loading }"
+        :class="{ running: loading }"
         :disabled="isValid"
       >
         Login
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters, mapActions } from "vuex";
 
 export default {
   name: "LoginForm",
@@ -44,6 +44,13 @@ export default {
     },
     ...mapState(["loading", "error"]),
     ...mapGetters(["hasError"])
+  },
+  methods: {
+    ...mapActions(["login"]),
+    async onSubmit() {
+      const result = await this.login(this.userId);
+      if (result) this.$router.push("chat");
+    }
   }
 };
 </script>

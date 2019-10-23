@@ -11,11 +11,19 @@ export default {
       commit("setError", "");
       commit("setLoading", true);
       // Connect user to ChatKit service
-      const { id, name } = await chatKit.connectUser(userId);
-      commit("setUser", { username: id, name: name });
+      const currentUser = await chatKit.connectUser(userId);
+      commit("setUser", { username: currentUser.id, name: currentUser.name });
       commit("setReconnect", false);
 
-      console.log("state.user: ", state.user);
+      const rooms = currentUser.rooms.map(room => ({
+        id: room.id,
+        name: room.name
+      }));
+      commit("setRooms", rooms);
+      const activeRoom = state.activeRoom || rooms[0];
+      commit("setActiveRoom", { id: activeRoom.id, name: activeRoom.name });
+      await chatKit.subscribeToRoom(activeRoom.id);
+      return true;
     } catch (err) {
       handleError(commit, err);
     } finally {

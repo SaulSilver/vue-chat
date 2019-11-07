@@ -3,7 +3,7 @@
     <b-navbar-brand href="#">Vue Chat</b-navbar-brand>
     <b-navbar-nav class="ml-auto">
       <b-nav-text>{{ user.name }} |</b-nav-text>
-      <b-nav-item href="#" active>Logout</b-nav-item>
+      <b-nav-item href="#" @click="onLogout">Logout</b-nav-item>
     </b-navbar-nav>
   </b-navbar>
 </template>
@@ -21,7 +21,7 @@ export default {
     ...mapMutations(["setReconnect"]),
     onLogout() {
       this.$router.push({ path: "/" });
-      this.logout();
+      this.$store.dispatch("logout");
     },
     unload() {
       if (this.user.username) this.setReconnect(true);
@@ -29,7 +29,7 @@ export default {
   },
   mounted() {
     window.addEventListener("beforeunload", this.unload);
-    if (this.reconnect) this.login(this.user.username);
+    if (this.reconnect) this.$store.dispatch("login", this.user.username);
   }
 };
 </script>

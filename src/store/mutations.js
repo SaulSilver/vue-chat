@@ -22,7 +22,7 @@ export default {
   },
   clearChatRoom(state) {
     state.users = [];
-    state.message = [];
+    state.messages = [];
   },
   setMessages(state, messages) {
     state.messages = messages;
@@ -36,15 +36,11 @@ export default {
   setUserTyping(state, userId) {
     state.userTyping = userId;
   },
-  // FIXME: might be written as "state.error = null" and so on
   reset(state) {
-    state = {
-      ...state,
-      error: null,
-      users: [],
-      message: [],
-      rooms: [],
-      user: null
-    };
+    state.error = null;
+    state.users = [];
+    state.message = [];
+    state.rooms = [];
+    state.user = null;
   }
 };

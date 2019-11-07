@@ -49,4 +49,17 @@ const subscribeToRoom = async roomId => {
   setMembers();
   return activeRoom;
 };
-export default { connectUser, subscribeToRoom };
+
+const sendMessage = async text => {
+  const messageId = await currentUser.sendMessage({
+    text,
+    roomId: activeRoom.id
+  });
+  return messageId;
+};
+
+export const isTyping = roomId => currentUser.isTypingIn({ roomId });
+
+const disconnectUser = () => currentUser.disconnect();
+
+export default { connectUser, subscribeToRoom, sendMessage, disconnectUser };

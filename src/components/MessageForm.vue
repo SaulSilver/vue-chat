@@ -9,7 +9,8 @@
           id="message-input"
           type="text"
           v-model="message"
-          placeholder="Enter Message halawa"
+          @input="isTyping"
+          placeholder="Enter Message.."
           autocomplete="off"
           required
         ></b-form-input>
@@ -23,7 +24,9 @@
 
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters, mapActions } from "vuex";
+import { isTyping } from "../chatkit.js";
+
 export default {
   name: "MessageForm",
   data: function() {
@@ -32,6 +35,16 @@ export default {
   computed: {
     ...mapState(["user", "sending", "error", "activeRoom"]),
     ...mapGetters(["hasError"])
+  },
+  methods: {
+    ...mapActions(["sendMessage"]),
+    async onSubmit() {
+      const result = await this.sendMessage(this.meesage);
+      if (result) this.message = "";
+    },
+    async isTyping() {
+      await isTyping(this.activeRoom.id);
+    }
   }
 };
 </script>

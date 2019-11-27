@@ -1,18 +1,13 @@
 <template>
   <div class="login">
-    <b-jumbotron header="Vue.js Chat" lead="hello" bg-variant="info" text-variant="white">
-      <b-btn target="_blank" href="https://pusher.com/chatkit">{{ $t('homepage.more-info') }}</b-btn>
-    </b-jumbotron>
+    <header>
+      <h1>Vue.js Chat</h1>
+      <h4>{{$t('homepage.subtitle')}}</h4>
+      <a target="_blank" href="https://pusher.com/chatkit">{{ $t('homepage.more-info') }}</a>
+    </header>
 
-    <b-container>
-      <b-row>
-        <b-col lg="4" md="3"></b-col>
-        <b-col lg="4" md="6">
-          <LoginForm></LoginForm>
-        </b-col>
-        <b-col lg="4" md="3"></b-col>
-      </b-row>
-    </b-container>
+    <LoginForm></LoginForm>
+    <!-- TODO: add a language selector -->
   </div>
 </template>
 
@@ -26,3 +21,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+header {
+  margin-bottom: 100px;
+}
+</style>

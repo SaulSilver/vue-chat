@@ -1,0 +1,32 @@
+@import '../_palette';
+@import '../mixins';
+
+button[type='submit'] {
+  height: 50px;
+  width: 140px;
+
+  margin: 5px;
+
+  font-size: medium;
+  border-radius: 5px;
+
+  border: none;
+  border-radius: 5px;
+  background-color: $button-submit-color;
+  color: $card-color;
+}
+
+input[type='text'] {
+  height: 25px;
+  width: 120px;
+
+  padding: 5px;
+  margin: 5px;
+
+  font-size: medium;
+  border-radius: 5px;
+  background-color: $input-type-text-color;
+  ::placeholder {
+    color: hsl(204, 21, 92%);
+  }
+}

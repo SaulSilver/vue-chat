@@ -1,1 +1,35 @@
-@import './variables';
+@import './components';
+@import './pages';
+@import './palette';
+@import './normalize';
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: $background-color;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  @include flexCenter(column);
+}
+#nav {
+  padding: 30px;
+  a {
+    font-weight: bold;
+    background-color: $lighter-blue;
+    .router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+
+.shadow {
+  @include shadow();
+}

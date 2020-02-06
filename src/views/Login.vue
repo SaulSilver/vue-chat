@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div class="login card">
     <header>
       <h1>Vue.js Chat</h1>
       <h4>{{$t('homepage.subtitle')}}</h4>
@@ -22,8 +22,3 @@ export default {
 };
 </script>
 
-<style lang="scss">
-header {
-  margin-bottom: 100px;
-}
-</style>

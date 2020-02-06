@@ -1,0 +1,17 @@
+@import '../_palette';
+@import '../mixins';
+
+.login {
+  height: 500px;
+  width: 400px;
+  min-width: fit-content;
+  min-height: max-content;
+
+  @include flexCenter(column);
+  color: $text-title-color;
+  text-align: center;
+
+  header {
+    margin: 0 0 50px;
+  }
+}

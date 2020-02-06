@@ -4,11 +4,11 @@
 
     <div class="input-field">
       <!-- TODO: change the camel casing to kebab -->
-      <label for="userInput">User name</label>
       <input
         id="userInput"
         type="text"
-        placeholder="Enter user name"
+        class="shadow"
+        placeholder="Username"
         v-model="userId"
         autocomplete="off"
         :disabled="loading"
@@ -16,7 +16,13 @@
       >
     </div>
 
-    <button type="submit" variant="primary" :class="{ running: loading }" :disabled="isValid">
+    <button
+      type="submit"
+      class="shadow"
+      variant="primary"
+      :class="{ running: loading }"
+      :disabled="isValid"
+    >
       Login
       <!-- TODO: add a cool spinner  -->
     </button>

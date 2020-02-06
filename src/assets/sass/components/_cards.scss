@@ -1,0 +1,12 @@
+@import '../_palette';
+@import '../mixins';
+
+.card {
+  margin: 5px;
+  padding: 5px;
+  // border: 0.1px solid $darkest-blue;
+  border-radius: 8px;
+  @include shadow();
+
+  background-color: $card-color;
+}

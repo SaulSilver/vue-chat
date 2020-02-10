@@ -8,6 +8,7 @@ import store from "./store";
 
 import "./assets/css/loading.css";
 import "./assets/css/loading-btn.css";
+import "./assets/sass/index.scss";
 
 import translations from "../i18n";
 

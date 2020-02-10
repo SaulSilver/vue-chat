@@ -9,15 +9,13 @@ body {
   background-color: $background-color;
 }
 
-#app {
+.app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  position: absolute;
   height: 100%;
   width: 100%;
-  @include flexCenter(column);
 }
 #nav {
   padding: 30px;

@@ -2,15 +2,15 @@
   <div class="room-list">
     <h4>Channels</h4>
     <hr>
-    <b-list-group v-if="activeRoom">
-      <b-list-group-item
+    <div v-if="activeRoom">
+      <div
         v-for="room in rooms"
         :key="room.name"
         :active="activeRoom.id === room.id"
         href="#"
         @click="onChange(room)"
-      ># {{room.name}}</b-list-group-item>
-    </b-list-group>
+      ># {{room.name}}</div>
+    </div>
   </div>
 </template>
 

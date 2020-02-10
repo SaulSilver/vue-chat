@@ -33,10 +33,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-.chat-container {
-  display: grid;
-  grid-template-rows: repeat(1fr, 2fr, 1fr);
-}
-</style>

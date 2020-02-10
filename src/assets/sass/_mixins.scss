@@ -6,9 +6,9 @@
   box-shadow: 2px 2px 4px 4px $shadow-color; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
-@mixin flexCenter($direction) {
+@mixin flex($direction: column, $justify-content: center) {
   display: flex;
   flex-direction: $direction;
-  justify-content: center;
+  justify-content: $justify-content;
   align-items: center;
 }

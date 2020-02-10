@@ -2,15 +2,18 @@
 @import '../mixins';
 
 .chat-dashboard {
-  // height: 100%;
-  // width: 100%;
-
   .chat-navbar {
     width: 100%;
-    @include flexCenter(row);
-    justify-content: space-between;
-    .navigate-home {
+    @include flex(row, space-around);
+    .home-navigation {
       align-items: left;
+    }
+    .right-navigation {
+      @include flex(row, space-between);
+      list-style-type: none;
+      * {
+        margin: 0 10px 0 10px;
+      }
     }
   }
 

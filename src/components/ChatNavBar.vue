@@ -1,8 +1,11 @@
 <template>
   <div class="chat-navbar">
-    <a class="navigate-home" href="#">Vue Chat</a>
-    <label>{{ user.name }} |</label>
-    <a href="#" @click="onLogout">Logout</a>
+    <a class="home-navigation" href="#">Vue Chat</a>
+    <div class="right-navigation">
+      <label>{{ user.name }}</label>
+      <label>|</label>
+      <a href="#" @click="onLogout">Logout</a>
+    </div>
   </div>
 </template>
 

@@ -3,10 +3,14 @@
     <ChatNavBar/>
 
     <div class="chat-container" :class="{running: loading}">
-      <RoomList/>
-      <MessageList/>
-      <MessageForm/>
-      <UserList/>
+      <aside class="chat-sidebar">
+        <RoomList/>
+        <UserList/>
+      </aside>
+      <div class="messages-main">
+        <MessageList/>
+        <MessageForm/>
+      </div>
     </div>
   </div>
 </template>

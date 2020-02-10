@@ -1,19 +1,31 @@
 @import '../_palette';
 @import '../mixins';
 
-#chat-dashboard {
-  height: 100%;
-  width: 100%;
+.chat-dashboard {
+  // height: 100%;
+  // width: 100%;
 
-  display: grid;
-
-  #chat-navbar {
-    grid-area: header;
+  .chat-navbar {
     width: 100%;
     @include flexCenter(row);
     justify-content: space-between;
     .navigate-home {
       align-items: left;
+    }
+  }
+
+  .chat-container {
+    display: flex;
+    flex-direction: row;
+
+    .chat-sidebar {
+      display: flex;
+      flex-direction: column;
+    }
+    .messages-main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

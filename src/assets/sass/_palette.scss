@@ -4,7 +4,9 @@ $darkest-blue: hsl(201, 24%, 14%);
 $darker-blue: hsl(204, 77%, 26%);
 $lighter-blue: hsl(204, 48%, 72%);
 $lightest-blue: hsl(204, 86%, 86%);
-$shadow-color: hsl(0, 0%, 76%);
+$shadow-color: #c3c3c3;
+// monoscale colors
+$grey: #707070;
 
 // text color
 $text-title-color: hsl(204, 68%, 66%);
@@ -18,3 +20,10 @@ $button-submit-color: hsl(204, 57%, 57%);
 
 // input color
 $input-type-text-color: hsl(200, 2, 98%);
+
+// highlighted color
+$text-highlight-color: #539dd0;
+
+// success & warning
+$success-color: #00b507;
+$warning-color: #aa0101;

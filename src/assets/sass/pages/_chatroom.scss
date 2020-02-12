@@ -20,31 +20,32 @@
   .chat-container {
     display: flex;
     flex-direction: row;
+    height: 100%;
+    .title {
+      font-size: medium;
+      font-weight: bold;
+      margin: 0 5px 0;
+    }
+    hr {
+      height: 3px;
+      width: 40px;
+      border: none;
+      background-color: #fcdc2f;
+    }
     .chat-sidebar {
       display: flex;
-      min-width: 15%;
       padding: 25px;
+      min-width: 15%;
       flex-direction: column;
-      .title {
-        font-size: medium;
-        font-weight: bold;
-        margin: 0 5px 0;
-      }
-      hr {
-        height: 3px;
-        width: 40px;
-        border: none;
-        background-color: #fcdc2f;
-      }
       .list {
         margin-bottom: 20px;
       }
       .list-item {
         margin-bottom: 10px;
-        color: #707070;
+        color: $grey;
         width: 300px;
         &.active {
-          color: #539dd0;
+          color: $text-highlight-color;
           font-weight: bold;
         }
         .circle {
@@ -55,17 +56,25 @@
           margin-left: 8px;
         }
         .online {
-          background-color: #00b507;
+          background-color: $success-color;
         }
         .offline {
-          background-color: #aa0101;
+          background-color: $warning-color;
         }
       }
     }
+
     .messages-main {
       width: 100%;
       display: flex;
       flex-direction: column;
+      .message-list {
+        .title {
+          color: $grey;
+        }
+        padding: 25px;
+        min-height: 450px;
+      }
     }
   }
 }

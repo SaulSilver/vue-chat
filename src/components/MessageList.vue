@@ -1,7 +1,7 @@
 <template>
   <div class="message-list card">
-    <h4>Messages</h4>
-    <hr>
+    <h4 class="title">{{ activeRoom.name}}</h4>
+    <hr align="left">
     <div id="chat-messages" class="message-group" v-chat-scroll="{smooth: true}">
       <div class="message" v-for="(message, index) in messages" :key="index">
         <div class="clearfix">
@@ -24,34 +24,6 @@
 import { mapState } from "vuex";
 export default {
   name: "MessageList",
-  computed: { ...mapState(["messages", "userTyping"]) }
+  computed: { ...mapState(["messages", "userTyping", "activeRoom"]) }
 };
 </script>
-
-<style>
-.message-list {
-  margin-bottom: 15px;
-  padding-right: 15px;
-}
-.message-group {
-  height: 65vh !important;
-  overflow-y: scroll;
-}
-.message {
-  border: 1px solid lightblue;
-  border-radius: 4px;
-  padding: 10px;
-  margin-bottom: 15px;
-}
-.message-title {
-  font-size: 1rem;
-  display: inline;
-}
-.message-text {
-  color: gray;
-  margin-bottom: 0;
-}
-.user-typing {
-  height: 1rem;
-}
-</style>

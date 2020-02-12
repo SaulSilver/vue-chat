@@ -1,16 +1,19 @@
 <template>
-  <div class="room-list">
-    <h4>Channels</h4>
-    <hr>
-    <div v-if="activeRoom">
-      <div
+  <div class="room list">
+    <h4 class="title">Channels</h4>
+    <hr align="left">
+    <ul v-if="activeRoom">
+      <li
+        class="list-item"
         v-for="room in rooms"
         :key="room.name"
-        :active="activeRoom.id === room.id"
+        :class="{active: activeRoom.id === room.id}"
         href="#"
         @click="onChange(room)"
-      ># {{room.name}}</div>
-    </div>
+      >
+        <label># {{room.name}}</label>
+      </li>
+    </ul>
   </div>
 </template>
 

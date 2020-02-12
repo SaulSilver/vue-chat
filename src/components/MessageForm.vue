@@ -1,9 +1,9 @@
 <template>
-  <div class="message-form ld-over">
+  <div class="message-form card">
     <small class="text-muted">@{{user.username}}</small>
-    <form @submit.prevent="onSubmit" class="ld-over" :class="{runnning: sending}">
-      <div class="ld ld-ring ld-spin"></div>
-      <div variant="danger" :show="hasError">{{ error }}</div>
+    <form @submit.prevent="onSubmit" :class="{runnning: sending}">
+      <!-- <div class="ld ld-ring ld-spin"></div> -->
+      <div class="danger" :show="hasError">{{ error }}</div>
       <fieldset>
         <input
           id="message-input"

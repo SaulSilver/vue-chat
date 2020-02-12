@@ -1,5 +1,5 @@
 <template>
-  <div class="message-list">
+  <div class="message-list card">
     <h4>Messages</h4>
     <hr>
     <div id="chat-messages" class="message-group" v-chat-scroll="{smooth: true}">

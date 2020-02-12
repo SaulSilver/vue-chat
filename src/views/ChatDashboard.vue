@@ -3,7 +3,7 @@
     <ChatNavBar/>
 
     <div class="chat-container" :class="{running: loading}">
-      <aside class="chat-sidebar">
+      <aside class="chat-sidebar card">
         <RoomList/>
         <UserList/>
       </aside>
